@@ -32,7 +32,7 @@ public class TestMainMysql {
 				"WITH (\n" +
 				"  'connector' = 'kafka',\n" +
 				"  'topic' = 'topic.flink.mysql',\n" +
-				"  'properties.bootstrap.servers' = '8.129.146.99:9092',\n" +
+				"  'properties.bootstrap.servers' = '127.0.0.1:9092',\n" +
 				"  'properties.group.id' = 'testGroup1',\n" +
 				"  'format' = 'json',\n" +
 				"  'scan.startup.mode' = 'group-offsets'\n" +
