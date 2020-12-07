@@ -29,7 +29,7 @@ public class HttpGetData extends RichSinkFunction<Row> {
 		//初始化kafka连接环境
 		super.open(parameters);
 		Properties props = new Properties();
-		props.put("bootstrap.servers", "8.129.146.99:9092");
+		props.put("bootstrap.servers", "127.0.0.1:9092");
 		props.put("acks", "all");
 		props.put("retries", 0);
 		props.put("batch.size", 16384);

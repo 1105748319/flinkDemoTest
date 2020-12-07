@@ -45,7 +45,7 @@ public class TestMain {
 					"WITH (\n" +
 					"  'connector' = 'kafka',\n" +
 					"  'topic' = 'topic.flink',\n" +
-					"  'properties.bootstrap.servers' = '8.129.146.99:9092',\n" +
+					"  'properties.bootstrap.servers' = '127.0.0.1:9092',\n" +
 					"  'properties.group.id' = 'testGroup1',\n" +
 					"  'format' = 'json',\n" +
 					"  'scan.startup.mode' = 'latest-offset'\n" +
@@ -86,7 +86,7 @@ public class TestMain {
 					});
 			System.out.println("fsdf");
 			Properties properties = new Properties();
-			properties.setProperty("bootstrap.servers", "8.129.146.99:9092");
+			properties.setProperty("bootstrap.servers", "127.0.0.1:9092");
 			properties.setProperty("transaction.timeout.ms", 1000 * 60 * 5 + "");
 			//properties.setProperty(ProducerConfig.TRANSACTION_TIMEOUT_CONFIG, 1000 * 60 * 3 + "");
 			//properties.setProperty(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, "1");
