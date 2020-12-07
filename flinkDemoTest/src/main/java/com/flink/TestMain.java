@@ -34,8 +34,6 @@ public class TestMain {
 			);
 			env.getConfig().setRestartStrategy(RestartStrategies.noRestart());
 			env.enableCheckpointing(1000);
-
-
 			String createTable = String.format(
 				//"CREATE TABLE UserScores (type STRING, orderNo STRING,productName STRING,money FLOAT,name STRING,zoneCode STRING,zoneName STRING)\n" +
 				"CREATE TABLE UserScores (requestId STRING, dataList ARRAY<ROW(orderNo STRING, money FLOAT, name STRING, zoneCode STRING, zoneName STRING)>)\n"
