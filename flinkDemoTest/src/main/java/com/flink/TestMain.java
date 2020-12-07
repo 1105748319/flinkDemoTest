@@ -47,7 +47,6 @@ public class TestMain {
 					"  'scan.startup.mode' = 'latest-offset'\n" +
 					")");
 
-
 			TableResult tableResult = tEnv.executeSql(createTable);
 
 			Table table = tEnv.sqlQuery("SELECT * FROM UserScores ");
