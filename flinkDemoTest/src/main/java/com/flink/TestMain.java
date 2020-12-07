@@ -20,7 +20,6 @@ public class TestMain {
 	protected static StreamExecutionEnvironment env;
 	protected static StreamTableEnvironment tEnv;
 	protected static int ff = 0;
-
 	public static void main(String[] args) throws Exception {
 		try {
 			env = StreamExecutionEnvironment.getExecutionEnvironment();
