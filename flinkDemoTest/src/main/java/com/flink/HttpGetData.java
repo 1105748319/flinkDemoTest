@@ -107,21 +107,21 @@ public class HttpGetData extends RichSinkFunction<Row> {
 			//处理接口返回的结果
 			List<Info> userInfos = JsonUtil.fromJsonArray(result1, Info.class);
 			//对返回的结果做分类并做聚合
-			Map<String, Double> collect = userInfos.stream()
-				.collect(Collectors.groupingBy(
-					Info::getOrderNo,
-					Collectors.summingDouble(Info::getMoney)));
-			Long ff2 = System.currentTimeMillis();
-			JSONObject event = new JSONObject();
-			event.put("f0", split[0]);
-			event.put("f1", collect.toString());
-			event.put("f2", ff2 - ff1);
-			System.out.println(split[1] + "=========" + (ff2 - ff1));
-			//把处理的结果放回到消息队列
-			producer.send(new ProducerRecord<String, String>(
-				"topic.flink.mysql.response",
-				split[0],
-				event.toString()));
+//			Map<String, Double> collect = userInfos.stream()
+//				.collect(Collectors.groupingBy(
+//					Info::getOrderNo,
+//					Collectors.summingDouble(Info::getMoney)));
+//			Long ff2 = System.currentTimeMillis();
+//			JSONObject event = new JSONObject();
+//			event.put("f0", split[0]);
+//			event.put("f1", collect.toString());
+//			event.put("f2", ff2 - ff1);
+//			System.out.println(split[1] + "=========" + (ff2 - ff1));
+//			//把处理的结果放回到消息队列
+//			producer.send(new ProducerRecord<String, String>(
+//				"topic.flink.mysql.response",
+//				split[0],
+//				event.toString()));
 
 		} catch (Exception e) {
 			e.printStackTrace();

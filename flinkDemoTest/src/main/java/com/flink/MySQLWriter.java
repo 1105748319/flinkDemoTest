@@ -60,8 +60,8 @@ public class MySQLWriter extends RichSourceFunction<UserInfo> {
 				String orderno = resultSet.getString("orderno");
 				Float money = resultSet.getFloat("money");
 				if (!(orderno.isEmpty())) {
-					DeviceMap.setOrderno(orderno);
-					DeviceMap.setMoney(money);
+					//DeviceMap.setOrderno(orderno);
+					//DeviceMap.setMoney(money);
 					ctx.collect(DeviceMap);
 				}
 			}

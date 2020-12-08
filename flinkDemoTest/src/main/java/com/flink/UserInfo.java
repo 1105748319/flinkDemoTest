@@ -1,22 +1,22 @@
 package com.flink;
 
 public class UserInfo {
-    private String orderno;
-    private Float money;
+    private String requestId;
+    private String recordCount;
 
-	public String getOrderno() {
-		return orderno;
+	public String getRequestId() {
+		return requestId;
 	}
 
-	public void setOrderno(String orderno) {
-		this.orderno = orderno;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public Float getMoney() {
-		return money;
+	public String getRecordCount() {
+		return recordCount;
 	}
 
-	public void setMoney(Float money) {
-		this.money = money;
+	public void setRecordCount(String recordCount) {
+		this.recordCount = recordCount;
 	}
 }

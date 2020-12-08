@@ -2,67 +2,67 @@ package com.flink;
 
 public class Info {
 
-	public String orderNo;
-	public int id;
-	public String productName;
-	public Float money;
-    public String userName;
-    public String zoneCode;
-    public String zoneName;
+    public String order_no;
+    public String type;
+    public String product_name;
+    public Float money;
+    public String name;
+    public String zone_Code;
+    public String zone_name;
 
-	public String getOrderNo() {
-		return orderNo;
-	}
+    public String getOrder_no() {
+        return order_no;
+    }
 
-	public void setOrderNo(String orderNo) {
-		this.orderNo = orderNo;
-	}
+    public void setOrder_no(String order_no) {
+        this.order_no = order_no;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public String getProductName() {
-		return productName;
-	}
+    public String getProduct_name() {
+        return product_name;
+    }
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
 
-	public Float getMoney() {
-		return money;
-	}
+    public Float getMoney() {
+        return money;
+    }
 
-	public void setMoney(Float money) {
-		this.money = money;
-	}
+    public void setMoney(Float money) {
+        this.money = money;
+    }
 
-	public String getUserName() {
-		return userName;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getZoneCode() {
-		return zoneCode;
-	}
+    public String getZone_Code() {
+        return zone_Code;
+    }
 
-	public void setZoneCode(String zoneCode) {
-		this.zoneCode = zoneCode;
-	}
+    public void setZone_Code(String zone_Code) {
+        this.zone_Code = zone_Code;
+    }
 
-	public String getZoneName() {
-		return zoneName;
-	}
+    public String getZone_name() {
+        return zone_name;
+    }
 
-	public void setZoneName(String zoneName) {
-		this.zoneName = zoneName;
-	}
+    public void setZone_name(String zone_name) {
+        this.zone_name = zone_name;
+    }
 }

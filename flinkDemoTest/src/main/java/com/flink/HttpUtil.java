@@ -39,6 +39,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * HttpUtil
+ *
  * @author zhb
  * @date 2020/04/20
  */
@@ -47,14 +48,23 @@ public class HttpUtil {
     private static PoolingHttpClientConnectionManager cm;
     private static RequestConfig requestConfig;
     public static final String CHAR_SET = "UTF-8";
-    /**  最大连接数400. */
+    /**
+     * 最大连接数400.
+     */
     private static int MAX_CONNECTION_NUM = 400;
-    /** 单路由最大连接数80 */
+    /**
+     * 单路由最大连接数80
+     */
     private static int MAX_PER_ROUTE = 80;
-    /** 向服务端请求超时时间设置(单位:毫秒) */
+    /**
+     * 向服务端请求超时时间设置(单位:毫秒)
+     */
     private static int SERVER_REQUEST_TIME_OUT = 60000;
-    /** 服务端响应超时时间设置(单位:毫秒) */
+    /**
+     * 服务端响应超时时间设置(单位:毫秒)
+     */
     private static int SERVER_RESPONSE_TIME_OUT = 90000;
+
     static {
         try {
             cm = getPoolingHttpClientConnectionManager();
@@ -74,12 +84,12 @@ public class HttpUtil {
         }, 50000, 50000);
     }
 
-    public static PoolingHttpClientConnectionManager getPoolingHttpClientConnectionManager () {
+    public static PoolingHttpClientConnectionManager getPoolingHttpClientConnectionManager() {
         try {
             SSLContextBuilder sslContextBuilder = new SSLContextBuilder();
             sslContextBuilder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
             SSLConnectionSocketFactory socketFactory = new SSLConnectionSocketFactory(sslContextBuilder.build());
-            Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory> create()
+            Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create()
                     .register("https", socketFactory)
                     .register("http", new PlainConnectionSocketFactory())
                     .build();
@@ -94,8 +104,8 @@ public class HttpUtil {
     }
 
     /**
-     * @description 获取一个http连接
      * @return
+     * @description 获取一个http连接
      */
     private static CloseableHttpClient getHttpClient(RequestConfig config) {
         CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(config).setConnectionManager(cm).build();
@@ -104,6 +114,7 @@ public class HttpUtil {
 
     /**
      * Https post请求
+     *
      * @param url
      * @param header
      * @param params
@@ -158,6 +169,7 @@ public class HttpUtil {
 
     /**
      * Https post请求
+     *
      * @param url
      * @param header
      * @param params
@@ -170,6 +182,7 @@ public class HttpUtil {
 
     /**
      * Https post请求
+     *
      * @param url
      * @param params
      * @return
@@ -181,6 +194,7 @@ public class HttpUtil {
 
     /**
      * Https get请求
+     *
      * @param url
      * @return
      */
@@ -190,6 +204,7 @@ public class HttpUtil {
 
     /**
      * Https get请求
+     *
      * @param url
      * @param charSet
      * @return
@@ -200,6 +215,7 @@ public class HttpUtil {
 
     /**
      * Https get请求
+     *
      * @param url
      * @param header
      * @return
@@ -242,6 +258,7 @@ public class HttpUtil {
 
     /**
      * Https get请求
+     *
      * @param url
      * @param header
      * @param params
@@ -286,10 +303,10 @@ public class HttpUtil {
     }
 
     /**
-     * @description HTTP POST
      * @param url
      * @param msg
      * @return
+     * @description HTTP POST
      */
     public static String post(String url, String msg) {
         HttpPost postMethod = new HttpPost(url);
@@ -312,7 +329,8 @@ public class HttpUtil {
         } finally {
             if (response != null) {
                 try {
-                    response.close();;
+                    response.close();
+                    ;
                 } catch (IOException e) {
                     LOGGER.error("", e);
                 }
@@ -333,7 +351,6 @@ public class HttpUtil {
             return "";
         }
     }
-
     public static class HttpBean {
         private String responseContent;
         private Header[] responseHeader;
@@ -356,6 +373,7 @@ public class HttpUtil {
 
 
     }
+
     public static void main(String[] args) {
         try {
             // 组装请求头
@@ -371,8 +389,8 @@ public class HttpUtil {
             String loginUrl = "http://192.168.120.192:8090/kafkaMsg/mysql/getData?recordCount=20";
             String result1 = HttpUtil.get(loginUrl);
             System.out.println(result1);
-			List<Info> userInfos = JsonUtil.fromJsonArray(result1, Info.class);
-			System.out.println(userInfos.size());
+            List<Info> userInfos = JsonUtil.fromJsonArray(result1, Info.class);
+            System.out.println(userInfos.size());
             //获取ticket
 
         } catch (Exception e) {

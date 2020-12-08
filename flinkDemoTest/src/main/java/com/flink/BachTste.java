@@ -101,7 +101,7 @@ public class BachTste {
 			for (int i = 0; i < integer; i++) {
 				Info info = new Info();
 				info.setMoney((float) i);
-				info.setOrderNo("ffff");
+				//info.setOrderNo("ffff");
 				objects.add(info);
 			}
 			DataSource<Info> userInfoDataSource = env.fromCollection(objects);
