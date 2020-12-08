@@ -46,6 +46,7 @@ public class TestMain {
         Table table = tEnv.sqlQuery("SELECT * FROM UserScores ");
         DataStream<UserInfo> infoDataStream1 = tEnv.toAppendStream(table, UserInfo.class);
         // infoDataStream1.print();
+
         String createTable1 = String.format(
                 //"CREATE TABLE UserScores (type STRING, orderNo STRING,productName STRING,money FLOAT,name STRING,zoneCode STRING,zoneName STRING)\n" +
                 "CREATE TABLE new_table_copy1 (type STRING, order_no STRING,product_name STRING,money FLOAT,name STRING,zone_Code STRING,zone_name STRING)\n"
